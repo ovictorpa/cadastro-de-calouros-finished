@@ -1,5 +1,5 @@
 TN:
-SF:src/index.js
+SF:src\index.js
 FNF:0
 FNH:0
 DA:1,1
@@ -23,7 +23,7 @@ BRF:1
 BRH:0
 end_of_record
 TN:
-SF:src/routes.js
+SF:src\routes.js
 FNF:0
 FNH:0
 DA:1,1
@@ -45,7 +45,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/app/controllers/StudentController.js
+SF:src\app\controllers\StudentController.js
 FN:7,index
 FN:13,show
 FN:22,store
@@ -243,7 +243,7 @@ BRF:41
 BRH:40
 end_of_record
 TN:
-SF:src/app/repositories/StudentsRepository.js
+SF:src\app\repositories\StudentsRepository.js
 FN:4,findAll
 FN:8,findById
 FN:13,findByEmail
@@ -335,7 +335,7 @@ BRF:13
 BRH:13
 end_of_record
 TN:
-SF:src/helpers/isDegreeExistent.js
+SF:src\helpers\isDegreeExistent.js
 FN:3,isDegreeExistent
 FNF:1
 FNH:1
@@ -355,7 +355,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:src/mocks/degrees.js
+SF:src\mocks\degrees.js
 FNF:0
 FNH:0
 DA:1,1
@@ -375,7 +375,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/mocks/students.js
+SF:src\mocks\students.js
 FNF:0
 FNH:0
 DA:1,1
@@ -440,7 +440,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/utils/isCepValid.js
+SF:src\utils\isCepValid.js
 FN:1,isCepValid
 FNF:1
 FNH:1
@@ -457,7 +457,7 @@ BRF:1
 BRH:1
 end_of_record
 TN:
-SF:src/utils/isEmailValid.js
+SF:src\utils\isEmailValid.js
 FN:1,isEmailValid
 FNF:1
 FNH:1
