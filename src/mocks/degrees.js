@@ -1,3 +1,5 @@
+//Cursos disponíveis para cadastro
+
 const degrees = [
   'Engenharia de Software',
   'Ciência da Computação',
