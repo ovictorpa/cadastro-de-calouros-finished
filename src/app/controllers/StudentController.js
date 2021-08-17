@@ -4,11 +4,16 @@ const isCepValid = require('../../utils/isCepValid');
 const isDegreeExistent = require('../../helpers/isDegreeExistent');
 
 class StudentController {
+
+
+
   index(req, res) {
     const students = StudentsRepository.findAll();
 
     res.json(students);
   }
+
+
 
   show(req, res) {
     const { id } = req.params;
@@ -18,6 +23,8 @@ class StudentController {
 
     res.json(student);
   }
+
+
 
   store(req, res) {
     const {
@@ -68,6 +75,8 @@ class StudentController {
 
     res.json(student);
   }
+
+
 
   update(req, res) {
     const { id } = req.params;
@@ -126,6 +135,8 @@ class StudentController {
 
     res.json(student);
   }
+
+
 
   delete(req, res) {
     const { id } = req.params;
