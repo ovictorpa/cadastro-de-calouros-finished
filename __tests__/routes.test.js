@@ -3,12 +3,18 @@ const app = require('../src/index');
 const students = require('../src/mocks/students');
 
 describe('GET Routes', () => {
+
+//##############################################################
+
   test('should get all students', async () => {
     const response = await request(app).get('/students');
 
     expect(response.status).toEqual(200);
     expect(response.text).toBe(JSON.stringify(students));
   });
+
+
+//##############################################################
 
   test('should get an existent student by id', async () => {
     const id = '1';
@@ -17,6 +23,9 @@ describe('GET Routes', () => {
 
     expect(response.status).toEqual(200);
   });
+
+
+//##################################################################
 
   test('should not get an non-existent student by id', async () => {
     const id = '123456789123456789';
@@ -27,7 +36,14 @@ describe('GET Routes', () => {
   });
 });
 
+
+
+
 describe('POST Routes', () => {
+
+
+  //######################################################
+
   test('should create a new student', async () => {
     const student = {
       name: 'Vinícius Lemos',
@@ -52,6 +68,9 @@ describe('POST Routes', () => {
     expect(createdStudent).toStrictEqual(student);
   });
 
+
+//########################################################
+
   test('should not create a new student with a blank name', async () => {
     const student = {
       name: '',
@@ -73,6 +92,9 @@ describe('POST Routes', () => {
       error: 'Name is required.',
     }));
   });
+
+
+  //################################################################
 
   test('should not create a new student with a blank e-mail', async () => {
     const student = {
@@ -96,6 +118,10 @@ describe('POST Routes', () => {
     }));
   });
 
+
+//######################################################################
+
+
   test('should not create a new student with a blank CEP', async () => {
     const student = {
       name: 'Vinícius Lemos',
@@ -117,6 +143,9 @@ describe('POST Routes', () => {
       error: 'CEP is required.',
     }));
   });
+
+
+//#######################################################################
 
   test('should not create a new student with a blank degree', async () => {
     const student = {
@@ -140,6 +169,10 @@ describe('POST Routes', () => {
     }));
   });
 
+
+
+  //#####################################################################
+
   test('should not create a new student with an invalid e-email', async () => {
     const student = {
       name: 'Vinícius Lemos',
@@ -162,6 +195,9 @@ describe('POST Routes', () => {
     }));
   });
 
+
+  //###################################################################
+
   test('should not create a new student with an existent e-email', async () => {
     const student = {
       name: 'Vinícius Lemos',
@@ -183,6 +219,10 @@ describe('POST Routes', () => {
       error: 'This e-mail is already in use.',
     }));
   });
+
+
+
+  //######################################################################
 
   test('should not create a new student with a invalid CEP', async () => {
     const student = {
@@ -209,6 +249,10 @@ describe('POST Routes', () => {
       error: 'This CEP is invalid.',
     }));
   });
+
+
+
+  //############################################################################
 
   test('should not create a new student with a invalid or non-existent degree', async () => {
     const student = {
@@ -237,7 +281,15 @@ describe('POST Routes', () => {
   });
 });
 
+
+
+
+
 describe('PUT Routes', () => {
+
+
+//###################################################################
+
   test('should update an existent student', async () => {
     const id = '1';
     const student = {
@@ -260,6 +312,9 @@ describe('PUT Routes', () => {
     expect(response.status).toEqual(200);
     expect(updatedStudent).toStrictEqual({ id, ...student });
   });
+
+
+  //#################################################################
 
   test('should not update a non-existent student', async () => {
     const id = '9892989';
@@ -284,6 +339,9 @@ describe('PUT Routes', () => {
     }));
   });
 
+
+//###################################################################
+
   test('should not update an existent student with a blank name', async () => {
     const id = '1';
     const student = {
@@ -306,6 +364,10 @@ describe('PUT Routes', () => {
       error: 'Name is required.',
     }));
   });
+
+
+
+  //###########################################################################
 
   test('should not update an existent student with a blank e-mail', async () => {
     const id = '1';
@@ -330,6 +392,10 @@ describe('PUT Routes', () => {
     }));
   });
 
+
+
+  //##########################################################################
+
   test('should not update an existent student with a blank CEP', async () => {
     const id = '1';
     const student = {
@@ -352,6 +418,8 @@ describe('PUT Routes', () => {
       error: 'CEP is required.',
     }));
   });
+
+//################################################################
 
   test('should not update an existent student with a blank degree', async () => {
     const id = '1';
@@ -376,6 +444,9 @@ describe('PUT Routes', () => {
     }));
   });
 
+
+//###################################################################
+
   test('should not update an existent student with an invalid e-mail', async () => {
     const id = '1';
     const student = {
@@ -398,6 +469,10 @@ describe('PUT Routes', () => {
       error: 'This e-mail is invalid.',
     }));
   });
+
+
+
+  //#################################################################
 
   test('should not update an existent student with a non-existent e-mail', async () => {
     const id = '1';
@@ -422,6 +497,10 @@ describe('PUT Routes', () => {
     }));
   });
 
+
+
+  //###################################################################
+
   test('should not update an existent student with different e-mail', async () => {
     const id = '3';
     const student = {
@@ -445,6 +524,9 @@ describe('PUT Routes', () => {
     }));
   });
 
+
+  //##############################################################
+
   test('should not update an existent student with a invalid CEP', async () => {
     const id = '1';
     const student = {
@@ -467,6 +549,9 @@ describe('PUT Routes', () => {
       error: 'This CEP is invalid.',
     }));
   });
+
+
+  //##################################################################
 
   test('should not update an existent student with a invalid or non-existent degree', async () => {
     const id = '1';
@@ -492,7 +577,13 @@ describe('PUT Routes', () => {
   });
 });
 
+
+
+
 describe('DELETE Routes', () => {
+
+  //#################################################################
+
   test('should delete an existent student by id', async () => {
     const id = '3';
 
@@ -501,6 +592,9 @@ describe('DELETE Routes', () => {
     expect(response.status).toEqual(204);
   });
 
+
+  //##################################################################
+  
   test('should delete a non-existent student by id', async () => {
     const id = '1937891749';
 
